@@ -1,0 +1,128 @@
+/* Basic styles for the body */
+body {
+  font-family: 'VT323', monospace;
+  background-color: #121212;
+  color: #00ff00;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background GIF */
+#gif-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: center / cover no-repeat;
+  z-index: -1;
+}
+
+/* Main content container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  font-size: 36px;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 20px;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* Input and button styling */
+input, button {
+  font-size: 18px;
+  font-family: 'VT323', monospace;
+  padding: 10px 15px;
+  color: #00ff00;
+  background-color: #121212;
+  border: 2px solid #00ff00;
+}
+
+input {
+  flex-grow: 1;
+  border-right: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+/* Movie list */
+#movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Movie item */
+.movie-item {
+  background-color: #121212;
+  color: #00ff00;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-item button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.movie-item button:hover {
+  background-color: #333;
+}
+
+/* Video player */
+#video-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+#video-player {
+  width: 80%;
+  height: 80%;
+}
+
+#close-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #121212;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  padding: 8px 16px;
+  cursor: pointer;
+}

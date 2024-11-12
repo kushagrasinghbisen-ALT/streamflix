@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STREAMFLIX Project Overview</title>
+  <!-- Corrected Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Press Start 2P', cursive, sans-serif;
+      background: #0e0e0e;
+      color: #00ff00;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    h1, h2 {
+      color: #00ff00;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-top: 40px;
+      animation: glitch 1s linear infinite;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      animation: neonPulse 1.5s ease-in-out infinite;
+    }
+
+    p, ul {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .slide {
+      display: none;
+      padding: 40px;
+      min-height: 100vh;
+      transition: transform 0.5s ease-in-out;
+      opacity: 0;
+      animation: slideIn 0.5s ease-out forwards;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .nav-button {
+      background-color: transparent;
+      color: #00ff00;
+      padding: 12px 25px;
+      border: 2px solid #00ff00;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .nav-button:hover {
+      background-color: #00ff00;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    }
+
+    /* Code styling */
+    pre, code {
+      font-family: 'Fira Code', monospace, 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      color: #00ff00;
+      background-color: #1c1c1c;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes neonPulse {
+      0%, 100% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+      50% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; }
+    }
+
+    @keyframes glitch {
+      2%, 64% { transform: translate(2px, 0) skew(0deg); }
+      4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+      62% { transform: translate(0, 0) skew(5deg); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active" id="slide1">
+      <h1>STREAMFLIX</h1>
+      <h2>Project Overview</h2>
+      <p>STREAMFLIX is a movie streaming web app designed to give users a seamless experience in watching movies and shows online.</p>
+      <p>The app offers multiple movie sources, multi-language support, and an interactive UI. Built using modern web technologies.</p>
+      <p>Technologies used:</p>
+      <ul>
+        <li>HTML, CSS, JavaScript for the front-end</li>
+        <li>TMDb API for fetching movie data</li>
+      </ul>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="nextSlide(2)">Next</button>
+      </div>
+    </div>
+
+    <!-- Slide 2: Key Features -->
+    <div class="slide" id="slide2">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Typing Sound: A typing sound plays as the user types in the search bar.</li>
+        <li>Watch Button: Each movie has a "Watch" button that starts streaming the movie.</li>
+        <li>Multi-Language Support: Movies available with multiple dubs and captions in different languages.</li>
+      </ul>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="prevSlide(1)">Previous</button>
+        <button class="nav-button" onclick="nextSlide(3)">Next</button>
+      </div>
+    </div>
+
+    <!-- Slide 3: Code - Typing Sound Feature -->
+    <div class="slide" id="slide3">
+      <h2>Code - Typing Sound Feature</h2>
+      <p>This code plays a typing sound whenever the user types in the search bar:</p>
+      <div class="code-box">
+        <pre>
+          <code>
+searchInput.addEventListener('input', function() {
+  clickSound.play(); // Play click sound when typing in search
+});
+        </code>
+        </pre>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="prevSlide(2)">Previous</button>
+        <button class="nav-button" onclick="nextSlide(4)">Next</button>
+      </div>
+    </div>
+
+    <!-- Slide 4: Code - Movie Search Feature -->
+    <div class="slide" id="slide4">
+      <h2>Code - Movie Search Feature</h2>
+      <p>This code fetches movies from TMDb API based on the search query:</p>
+      <div class="code-box">
+        <pre>
+          <code>
+searchButton.addEventListener('click', function() {
+  var searchText = searchInput.value.trim();
+  var url = 'https://api.themoviedb.org/3/search/multi?api_key=YOUR_API_KEY&query=' + encodeURIComponent(searchText);
+  fetchMovies(url);
+});
+        </code>
+        </pre>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="prevSlide(3)">Previous</button>
+        <button class="nav-button" onclick="nextSlide(5)">Next</button>
+      </div>
+    </div>
+
+    <!-- Slide 5: Code - Watch Movie Feature -->
+    <div class="slide" id="slide5">
+      <h2>Code - Watch Movie Feature</h2>
+      <p>This code dynamically loads and plays a selected movie or TV series:</p>
+      <div class="code-box">
+        <pre>
+          <code>
+function playMovie(type, id) {
+  var url = 'https://streamfr.onrender.com/api/player/' + id;
+  if (type === 'tv') {
+    url += '?series=1';
+  }
+  videoPlayer.src = url; // Set the video player's source URL
+  videoContainer.style.display = 'flex'; // Show the video player
+}
+        </code>
+        </pre>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="prevSlide(4)">Previous</button>
+        <button class="nav-button" onclick="nextSlide(6)">Next</button>
+      </div>
+    </div>
+
+    <!-- Slide 6: Conclusion -->
+    <div class="slide" id="slide6">
+      <h2>Conclusion</h2>
+      <p>STREAMFLIX offers a user-friendly, feature-rich platform for streaming movies and shows, supporting multiple languages and dubs. The app is designed using simple technologies, making it accessible for beginners in web development.</p>
+      <p><strong>Future Enhancements:</strong> User login features, personalized recommendations, playlist support, and more.</p>
+      <div class="navigation-buttons">
+        <button class="nav-button" onclick="prevSlide(5)">Previous</button>
+        <button class="nav-button" onclick="finishPresentation()">Finish</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 6;
+
+    function showSlide(slideNumber) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index + 1 === slideNumber) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide(slideNumber) {
+      currentSlide = slideNumber;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide(slideNumber) {
+      currentSlide = slideNumber;
+      showSlide(currentSlide);
+    }
+
+    function finishPresentation() {
+      alert('Thank you for viewing the presentation!');
+    }
+
+    showSlide(currentSlide);
+  </script>
+
+</body>
+</html>
