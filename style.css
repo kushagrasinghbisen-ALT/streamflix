@@ -5,6 +5,8 @@ body {
   color: #00ff00;
   margin: 0;
   padding: 0;
+  height: auto;             /* Adjusted height for better flexibility */
+  overflow: hidden;        /* Prevent scrolling */
 }
 
 /* Background GIF */
@@ -15,16 +17,16 @@ body {
   width: 100%;
   height: 100%;
   background: center / cover no-repeat;
-  z-index: -1;
+  z-index: -1;             /* Ensure the GIF is behind other content */
 }
 
 /* Main content container */
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  justify-content: center;   /* Center vertically */
+  align-items: center;       /* Center horizontally */
+  min-height: 100vh;         /* Ensure container fills the viewport height */
   padding: 20px;
   text-align: center;
 }
@@ -126,3 +128,4 @@ button:hover {
   padding: 8px 16px;
   cursor: pointer;
 }
+
